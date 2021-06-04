@@ -1,0 +1,31 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="/GUE_Admin123/update">
+    {% csrf_token %}
+    {% for ls in data %}
+            <h3> Employee Name:<input type="text" name="tname" value="{{ ls.empname}}"></br></h3>
+            <h3> Enter Address:<input type="text" name="address" value="{{ ls.age}}"></br></h3>
+            <h3> Designation:<input type="text" name="tdesignation" value="{{ ls.designation}}"></br></h3>
+            <h3> Gender:<input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other</br></h3>
+            <h3> Enter  Email:<input type="text" name="email" value="{{ls.email}}"></br></h3>
+            <h3> Enter Phone Number:<input type="text" name="phoneno" value="{{ls.phone}}"></br></h3>
+            <h3>Enter Department:<input type="text" name="dpt" value="{{ls.dpt}}"></br></h3>
+            <h3>Enter Date:<input type="date" name="dt" value="{{ls.dtime}}"></br></h3>
+            <h3>Enter Salary:<input type="text" name="passwd" value="{{ls.empsalary}}"></br></h3>
+            <h3>Enter User Name:<input type="text" name="username" value="{{ls.uname}}"></br></h3>
+
+
+      <input type="submit"  vlaue="submit">
+
+    {% endfor %}
+</form>
+</body>
+</html>
